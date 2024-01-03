@@ -1,0 +1,12 @@
+{
+  "name": "quiz-game-with-typescript",
+  "version": "1.0.0",
+  "description": "A multiple choice quiz game build with HTML, CSS and TypeScript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
