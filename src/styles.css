@@ -29,7 +29,7 @@ body {
 }
 
 .options-container-1 {
-  height: 20vh;
+  height: 18vh;
   width: 100vw;
   display: flex;
   align-items: center;
@@ -37,7 +37,7 @@ body {
 }
 
 .options-container-2 {
-  height: 20vh;
+  height: 18vh;
   width: 100vw;
   display: flex;
   align-items: center;
@@ -61,5 +61,33 @@ body {
 }
 
 .option:active {
+  transform: scale(0.9);
+}
+
+.next-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
+
+.next-button {
+  display: none;
+  height: 8rem;
+  width: 68rem;
+  margin: 2rem;
+  font-size: 1.3rem;
+  border: 1px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.next-button:hover {
+  background-color: rgb(209, 209, 209);
+  transform: scale(1.03);
+}
+
+.next-button:active {
   transform: scale(0.9);
 }
