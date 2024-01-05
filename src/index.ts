@@ -16,6 +16,7 @@ const options: string[][] = [
 ];
 
 let questionIndex: number = 0;
+let score: number = 0;
 
 function displayQuestion() {
   question.innerText = questions[questionIndex];

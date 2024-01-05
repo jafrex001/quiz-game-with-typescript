@@ -14,6 +14,7 @@ const options = [
     ["Square", "Hexagon", "Pentagon", "Septagon"],
 ];
 let questionIndex = 0;
+let score = 0;
 function displayQuestion() {
     question.innerText = questions[questionIndex];
     optionOne.innerText = options[questionIndex][0];
