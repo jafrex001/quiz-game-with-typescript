@@ -34,9 +34,7 @@ function displayQuestion() {
     optionFour.disabled = false;
     if (questionIndex === questions.length - 1) {
         nextQuestionButton.innerText = "Play Again";
-        nextQuestionButton.addEventListener("click", () => {
-            console.log("Game Ended");
-        });
+        nextQuestionButton.addEventListener("click", restartGame);
     }
 }
 function colorAnswers() {
@@ -82,4 +80,10 @@ nextQuestionButton.addEventListener("click", () => {
         displayQuestion();
     }
 });
+function restartGame() {
+    questionIndex = 0;
+    nextQuestionButton.innerText = "Next Question";
+    nextQuestionButton.style.display = "none";
+    displayQuestion();
+}
 displayQuestion();
