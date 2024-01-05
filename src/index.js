@@ -54,14 +54,26 @@ function colorAnswers() {
     const correctAnswerIndex = answers[questionIndex];
     if (correctAnswerIndex === 0) {
         optionOne.style.backgroundColor = "green";
+        optionTwo.style.backgroundColor = "red";
+        optionThree.style.backgroundColor = "red";
+        optionFour.style.backgroundColor = "red";
     }
     else if (correctAnswerIndex === 1) {
+        optionOne.style.backgroundColor = "red";
         optionTwo.style.backgroundColor = "green";
+        optionThree.style.backgroundColor = "red";
+        optionFour.style.backgroundColor = "red";
     }
     else if (correctAnswerIndex === 2) {
+        optionOne.style.backgroundColor = "red";
+        optionTwo.style.backgroundColor = "red";
         optionThree.style.backgroundColor = "green";
+        optionFour.style.backgroundColor = "red";
     }
     else if (correctAnswerIndex === 3) {
+        optionOne.style.backgroundColor = "red";
+        optionTwo.style.backgroundColor = "red";
+        optionThree.style.backgroundColor = "red";
         optionFour.style.backgroundColor = "green";
     }
 }
