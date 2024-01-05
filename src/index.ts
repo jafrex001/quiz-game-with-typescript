@@ -4,6 +4,7 @@ const optionTwo = document.getElementById("option-2") as HTMLButtonElement;
 const optionThree = document.getElementById("option-3") as HTMLButtonElement;
 const optionFour = document.getElementById("option-4") as HTMLButtonElement;
 const nextQuestionButton = document.getElementById("next-button") as HTMLButtonElement;
+const scoreDisplay = document.getElementById("score") as HTMLParagraphElement;
 
 const questions: string[] = ["Who is the largest mammal in the world?", "What ocean is the largest in the world?", "Who is considered the King of Gods in Greek Mythology?", "Which planet is the farthest away from the Sun?", "Which geometric shape has five equal sides?"];
 
@@ -14,6 +15,8 @@ const options: string[][] = [
   ["Uranus", "Pluto", "Saturn", "Neptune"],
   ["Square", "Hexagon", "Pentagon", "Septagon"],
 ];
+
+const answers: number[] = [2, 0, 1, 3, 2];
 
 let questionIndex: number = 0;
 let score: number = 0;

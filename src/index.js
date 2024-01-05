@@ -5,6 +5,7 @@ const optionTwo = document.getElementById("option-2");
 const optionThree = document.getElementById("option-3");
 const optionFour = document.getElementById("option-4");
 const nextQuestionButton = document.getElementById("next-button");
+const scoreDisplay = document.getElementById("score");
 const questions = ["Who is the largest mammal in the world?", "What ocean is the largest in the world?", "Who is considered the King of Gods in Greek Mythology?", "Which planet is the farthest away from the Sun?", "Which geometric shape has five equal sides?"];
 const options = [
     ["Brown Bear", "Humpback Whale", "Blue Whale", "African Elephant"],
@@ -13,6 +14,7 @@ const options = [
     ["Uranus", "Pluto", "Saturn", "Neptune"],
     ["Square", "Hexagon", "Pentagon", "Septagon"],
 ];
+const answers = [2, 0, 1, 3, 2];
 let questionIndex = 0;
 let score = 0;
 function displayQuestion() {
