@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #323437;
+  background: radial-gradient(circle, #009ac9, #007c92);
   color: white;
 }
 
