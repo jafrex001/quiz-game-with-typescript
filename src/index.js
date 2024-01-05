@@ -32,23 +32,13 @@ function displayQuestion() {
     optionTwo.disabled = false;
     optionThree.disabled = false;
     optionFour.disabled = false;
-}
-function disableOptions() {
-    optionOne.disabled = true;
-    optionTwo.disabled = true;
-    optionThree.disabled = true;
-    optionFour.disabled = true;
-    nextQuestionButton.style.display = "block";
-    colorAnswers();
-}
-nextQuestionButton.addEventListener("click", () => {
-    if (questionIndex < questions.length - 1) {
-        questionIndex += 1;
-        nextQuestionButton.style.display = "none";
-        displayQuestion();
+    if (questionIndex === questions.length - 1) {
+        nextQuestionButton.innerText = "Play Again";
+        nextQuestionButton.addEventListener("click", () => {
+            console.log("Game Ended");
+        });
     }
-});
-displayQuestion();
+}
 function colorAnswers() {
     const answers = [2, 0, 1, 3, 2];
     const correctAnswerIndex = answers[questionIndex];
@@ -77,3 +67,19 @@ function colorAnswers() {
         optionFour.style.backgroundColor = "green";
     }
 }
+function disableOptions() {
+    optionOne.disabled = true;
+    optionTwo.disabled = true;
+    optionThree.disabled = true;
+    optionFour.disabled = true;
+    nextQuestionButton.style.display = "block";
+    colorAnswers();
+}
+nextQuestionButton.addEventListener("click", () => {
+    if (questionIndex < questions.length - 1) {
+        questionIndex += 1;
+        nextQuestionButton.style.display = "none";
+        displayQuestion();
+    }
+});
+displayQuestion();
