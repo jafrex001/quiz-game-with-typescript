@@ -82,9 +82,6 @@ nextQuestionButton.addEventListener("click", () => {
     }
 });
 function restartGame() {
-    questionIndex = 0;
-    nextQuestionButton.innerText = "Next Question";
-    nextQuestionButton.style.display = "none";
-    displayQuestion();
+    location.reload();
 }
 displayQuestion();
