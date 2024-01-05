@@ -15,8 +15,6 @@ const options: string[][] = [
   ["Square", "Hexagon", "Pentagon", "Septagon"],
 ];
 
-const answers: number[] = [2, 0, 1, 3, 2];
-
 let questionIndex: number = 0;
 
 function displayQuestion() {
@@ -49,11 +47,7 @@ function disableOptions() {
   optionFour.disabled = true;
 
   nextQuestionButton.style.display = "block";
-
-  optionThree.style.backgroundColor = "green";
-  optionOne.style.backgroundColor = "red";
-  optionTwo.style.backgroundColor = "red";
-  optionFour.style.backgroundColor = "red";
+  colorAnswers();
 }
 
 nextQuestionButton.addEventListener("click", () => {
@@ -65,3 +59,18 @@ nextQuestionButton.addEventListener("click", () => {
 });
 
 displayQuestion();
+
+function colorAnswers() {
+  const answers: number[] = [2, 0, 1, 3, 2];
+  const correctAnswerIndex = answers[questionIndex];
+
+  if (correctAnswerIndex === 0) {
+    optionOne.style.backgroundColor = "green";
+  } else if (correctAnswerIndex === 1) {
+    optionTwo.style.backgroundColor = "green";
+  } else if (correctAnswerIndex === 2) {
+    optionThree.style.backgroundColor = "green";
+  } else if (correctAnswerIndex === 3) {
+    optionFour.style.backgroundColor = "green";
+  }
+}
