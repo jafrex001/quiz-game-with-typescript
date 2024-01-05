@@ -14,7 +14,6 @@ const options = [
     ["Uranus", "Pluto", "Saturn", "Neptune"],
     ["Square", "Hexagon", "Pentagon", "Septagon"],
 ];
-const answers = [2, 0, 1, 3, 2];
 let questionIndex = 0;
 let score = 0;
 function displayQuestion() {

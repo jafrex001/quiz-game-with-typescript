@@ -16,8 +16,6 @@ const options: string[][] = [
   ["Square", "Hexagon", "Pentagon", "Septagon"],
 ];
 
-const answers: number[] = [2, 0, 1, 3, 2];
-
 let questionIndex: number = 0;
 let score: number = 0;
 
