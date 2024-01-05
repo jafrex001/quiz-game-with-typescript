@@ -13,7 +13,6 @@ const options = [
     ["Test Option 4-1", "Test Option 4-2", "Test Option 4-3", "Test Option 4-4"],
     ["Test Option 5-1", "Test Option 5-2", "Test Option 5-3", "Test Option 5-4"],
 ];
-const answers = [2, 3, 0, 1, 2];
 let questionIndex = 0;
 function displayQuestion() {
     question.innerText = questions[questionIndex];
@@ -21,4 +20,35 @@ function displayQuestion() {
     optionTwo.innerText = options[questionIndex][1];
     optionThree.innerText = options[questionIndex][2];
     optionFour.innerText = options[questionIndex][3];
+    optionOne.addEventListener("click", disableOptions);
+    optionTwo.addEventListener("click", disableOptions);
+    optionThree.addEventListener("click", disableOptions);
+    optionFour.addEventListener("click", disableOptions);
+    optionThree.style.backgroundColor = "";
+    optionOne.style.backgroundColor = "";
+    optionTwo.style.backgroundColor = "";
+    optionFour.style.backgroundColor = "";
+    optionOne.disabled = false;
+    optionTwo.disabled = false;
+    optionThree.disabled = false;
+    optionFour.disabled = false;
 }
+function disableOptions() {
+    optionOne.disabled = true;
+    optionTwo.disabled = true;
+    optionThree.disabled = true;
+    optionFour.disabled = true;
+    nextQuestionButton.style.display = "block";
+    optionThree.style.backgroundColor = "green";
+    optionOne.style.backgroundColor = "red";
+    optionTwo.style.backgroundColor = "red";
+    optionFour.style.backgroundColor = "red";
+}
+nextQuestionButton.addEventListener("click", () => {
+    if (questionIndex < questions.length - 1) {
+        questionIndex += 1;
+        nextQuestionButton.style.display = "none";
+        displayQuestion();
+    }
+});
+displayQuestion();

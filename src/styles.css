@@ -64,6 +64,13 @@ body {
   transform: scale(0.9);
 }
 
+.option:disabled {
+  transition: none;
+  transform: none;
+  cursor: not-allowed;
+  color: white;
+}
+
 .next-button-container {
   display: flex;
   align-items: center;
@@ -86,6 +93,7 @@ body {
 .next-button:hover {
   background-color: rgb(209, 209, 209);
   transform: scale(1.03);
+  cursor: pointer;
 }
 
 .next-button:active {
