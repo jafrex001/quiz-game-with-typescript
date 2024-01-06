@@ -94,7 +94,6 @@ nextQuestionButton.addEventListener("click", () => {
 
 function restartGame() {
   location.reload();
-  console.log("Restarted game.");
 }
 
 displayQuestion();
