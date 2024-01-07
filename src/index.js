@@ -39,7 +39,8 @@ function displayQuestion() {
         nextQuestionButton.addEventListener("click", restartGame);
     }
 }
-function colorAnswers() {
+let selectedOption = null;
+function disableOptions(event) {
     const answers = [2, 0, 1, 3, 2];
     const correctAnswerIndex = answers[questionIndex];
     if (correctAnswerIndex === 0) {
@@ -66,19 +67,34 @@ function colorAnswers() {
         optionThree.style.backgroundColor = "red";
         optionFour.style.backgroundColor = "green";
     }
-}
-function disableOptions() {
+    const clickedOption = event.target;
+    if (clickedOption === optionOne) {
+        selectedOption = 0;
+    }
+    else if (clickedOption === optionTwo) {
+        selectedOption = 1;
+    }
+    else if (clickedOption === optionThree) {
+        selectedOption = 2;
+    }
+    else if (clickedOption === optionFour) {
+        selectedOption = 3;
+    }
     optionOne.disabled = true;
     optionTwo.disabled = true;
     optionThree.disabled = true;
     optionFour.disabled = true;
     nextQuestionButton.style.display = "block";
-    colorAnswers();
+    if (selectedOption === correctAnswerIndex) {
+        score += 1;
+    }
+    scoreDisplay.innerText = `Score: ${score}`;
 }
 nextQuestionButton.addEventListener("click", () => {
     if (questionIndex < questions.length - 1) {
         questionIndex += 1;
         nextQuestionButton.style.display = "none";
+        selectedOption = null;
         displayQuestion();
     }
 });

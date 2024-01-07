@@ -93,6 +93,12 @@ function disableOptions(event: Event) {
   optionFour.disabled = true;
 
   nextQuestionButton.style.display = "block";
+
+  if (selectedOption === correctAnswerIndex) {
+    score += 1;
+  }
+
+  scoreDisplay.innerText = `Score: ${score}`;
 }
 
 nextQuestionButton.addEventListener("click", () => {
