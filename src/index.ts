@@ -47,7 +47,9 @@ function displayQuestion() {
   }
 }
 
-function colorAnswers() {
+let selectedOption: number | null = null;
+
+function disableOptions(event: Event) {
   const answers: number[] = [2, 0, 1, 3, 2];
   const correctAnswerIndex = answers[questionIndex];
 
@@ -72,11 +74,7 @@ function colorAnswers() {
     optionThree.style.backgroundColor = "red";
     optionFour.style.backgroundColor = "green";
   }
-}
 
-let selectedOption: number | null = null;
-
-function disableOptions(event: Event) {
   const clickedOption = event.target as HTMLButtonElement;
 
   if (clickedOption === optionOne) {
@@ -95,7 +93,6 @@ function disableOptions(event: Event) {
   optionFour.disabled = true;
 
   nextQuestionButton.style.display = "block";
-  colorAnswers();
 }
 
 nextQuestionButton.addEventListener("click", () => {
