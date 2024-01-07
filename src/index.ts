@@ -74,7 +74,21 @@ function colorAnswers() {
   }
 }
 
-function disableOptions() {
+let selectedOption: number | null = null;
+
+function disableOptions(event: Event) {
+  const clickedOption = event.target as HTMLButtonElement;
+
+  if (clickedOption === optionOne) {
+    selectedOption = 0;
+  } else if (clickedOption === optionTwo) {
+    selectedOption = 1;
+  } else if (clickedOption === optionThree) {
+    selectedOption = 2;
+  } else if (clickedOption === optionFour) {
+    selectedOption = 3;
+  }
+
   optionOne.disabled = true;
   optionTwo.disabled = true;
   optionThree.disabled = true;
@@ -88,6 +102,7 @@ nextQuestionButton.addEventListener("click", () => {
   if (questionIndex < questions.length - 1) {
     questionIndex += 1;
     nextQuestionButton.style.display = "none";
+    selectedOption = null;
     displayQuestion();
   }
 });
